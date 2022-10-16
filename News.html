@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmIn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/news.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <img class="logoImg" src="Img/logo.jpeg" alt="" srcset="" />
+      </div>
+      <div class="logo">
+        <img class="logoImg" src="Img/user.svg" alt="" srcset="" />
+      </div>
+    </nav>
+    <main id="main">
+      <div class="lines">
+        <div class="line"></div>
+        <h2 id="WelcomeLine">
+          <span id="blue">Farm</span><span id="orange">News</span>
+        </h2>
+        <div class="line"></div>
+      </div>
+      <div class="loading" id="load">
+        <h1>Loading</h1>
+      </div>
+      <div class="news">
+        <div class="Image">
+          <img src="Img/Untitled.png" alt="" id="image" />
+        </div>
+        <div class="text">
+          <h1 id="Title">Welcome to Farm News</h1>
+          <!-- change me  -->
+          <h3 id="Author"><a href="/team.html">Team</a></h3>
+          <!-- change me  -->
+          <h3 id="Date">15/10/2022</h3>
+          <!-- change me  -->
+          <h3 id="Content">
+            Below 3 news boxes are dummy and remaining are actual, Because we
+            are using the dev version of a newsapi, We will upgrade it in
+            production phase after getting investments.
+          </h3>
+          <!-- change me  -->
+        </div>
+      </div>
+      <!-- Dummy Data -->
+      <div class="news">
+        <div class="Image">
+          <img
+            src="https://i.guim.co.uk/img/media/2856123f4b2595f27403c4eb5026f0f9135702b9/0_110_4706_2825/master/4706.jpg?width=1200&amp;height=630&amp;quality=85&amp;auto=format&amp;fit=crop&amp;overlay-align=bottom%2Cleft&amp;overlay-width=100p&amp;overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&amp;enable=upscale&amp;s=004cb5b34d4af0958fde3b3180280d4a"
+            alt=""
+            id="image"
+          />
+        </div>
+        <div class="text">
+          <h1 id="Title">
+            Gluten-free and insect-friendly: buckwheat returns to Dutch farms
+          </h1>
+          <h3 id="Author">Anne Pinto-Rodrigues</h3>
+          <h3 id="Date">2022-10-14T09:09:59Z of Publish</h3>
+          <h3 id="Content">
+            Organic farmer Kees Saibenga looks at the sea of white and pale pink
+            blossoms before him. It is mid-July and millions of tiny buckwheat
+            (Fagopyrum esculentum) flowers sway in the wind on the plot he …
+            [+6981 chars]
+          </h3>
+        </div>
+      </div>
+      <div class="news">
+        <div class="Image">
+          <img
+            src="https://static.independent.co.uk/2022/10/15/16/a9a45e25ca15ad5671575b49172439c7Y29udGVudHNlYXJjaGFwaSwxNjY1OTMzNTQ1-2.69291141.jpg?quality=75&amp;width=1200&amp;auto=webp"
+            alt=""
+            id="image"
+          />
+        </div>
+        <div class="text">
+          <h1 id="Title">
+            Farm workers and environmental activists march through central
+            London
+          </h1>
+          <h3 id="Author">Sam Hall</h3>
+          <h3 id="Date">2022-10-15T15:26:55Z of Publish</h3>
+          <h3 id="Content">
+            Hundreds of farm workers and environmental activists have marched
+            through central London in support of sustainable farming. Members of
+            the Landworkers Alliance and other farming groups marched from …
+            [+2099 chars]
+          </h3>
+        </div>
+      </div>
+      <div class="news">
+        <div class="Image">
+          <img
+            src="https://media.wired.com/photos/6348a6c6d540a0d4bba0cce0/191:100/w_1280,c_limit/Brian-Eno-Q&amp;A-Credit-Cecily-Eno-Culture.jpg"
+            alt=""
+            id="image"
+          />
+        </div>
+        <div class="text">
+          <h1 id="Title">
+            Brian Eno on Why He Wrote a Climate Album With Deepfake Birdsongs
+          </h1>
+          <h3 id="Author">Sophie Charara</h3>
+          <h3 id="Date">2022-10-14T11:00:00Z of Publish</h3>
+          <h3 id="Content">
+            One transition I liked on the album was Garden of Stars to
+            Inclusion, which comes as a relief. It made me think of the fire
+            lily growing after wildfires. Thats always a dialog, the possibility
+            that … [+3843 chars]
+          </h3>
+        </div>
+      </div>
+      <!-- Dummy Data -->
+    </main>
+    <footer>
+      <div class="nav">
+        <p><a href="index.html">Store</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><a href="team.html">Team</a></p>
+        <p><a href="News.html">Agri News</a></p>
+        <p><a href="weather.html">Weather</a></p>
+      </div>
+    </footer>
+
+    <script>
+      const url =
+        "https://newsapi.org/v2/everything?q=farmer&from=2022-10-14&apiKey=822866c181db4d848ab7835e2045f811";
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          if (data) {
+            load.style.display = "none";
+            data.articles.forEach((element) => {
+              console.log(element);
+              let div = document.createElement("div");
+              div.classList.add("news");
+              div.innerHTML = `<div class="Image">
+          <img src="${element.urlToImage}" alt="" id="image" />
+        </div>
+        <div class="text">
+          <h1 id="Title">${element.title}</h1>
+          <h3 id="Author">${element.author}</h3>
+          <h3 id="Date">${element.publishedAt} of Publish</h3>
+          <h3 id="Content">${element.content}</h3>
+        </div>`;
+              main.appendChild(div);
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

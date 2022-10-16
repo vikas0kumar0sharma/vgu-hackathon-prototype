@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmIn | Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap"
+      rel="stylesheet"
+      />
+      <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="css/weather_new.css" />
+      <script src="scripts/script.js"></script>
+    </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img class="logoImg" src="Img/logo.jpeg" alt="" srcset="" />
+      </div>
+      <div class="logo">
+        <img class="logoImg" src="Img/user.svg" alt="" srcset="" />
+      </div>
+    </nav>
+    <main>
+      <div class="lines">
+        <div class="line"></div>
+        <h2 id="WelcomeLine">
+          <span id="blue"></span><span id="orange">Weather</span>
+        </h2>
+        <div class="line"></div>
+      </div>
+      <div class="sections">
+        <div class="container">
+          <div class="city">Some Error Occured</div>
+          <div class="row">
+              <img src="" class="icon" alt="">
+              <div class="temp"></div>
+            </div>
+            <div class="column">
+              <div class="description"></div>
+              <div class="humidity">Humidity: </div>
+              <div class="speed">Wind Speed: </div>
+          </div>
+        </div>
+        <div class="container-right ">
+          <div class="Alert">
+            Alert Box
+          </div>
+          <div class="alertDes">
+            <div class="alertapi" style="font-size: 50px;">0</div>
+            <div style="font-size: 20px;">Alerts as of now</div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="weatherWidget" ></div>
+
+      
+      
+      </div>
+    </main>
+    <footer>
+      <div class="nav">
+        <p><a href="index.html">Store</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p><a href="team.html">Team</a></p>
+        <p><a href="News.html">Agri News</a></p>
+        <p><a href="weather.html">Weather</a></p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+    window.weatherWidgetConfig.push({
+        selector:".weatherWidget",
+        apiKey:"NRYNBTQ33P7W5BUY9H8MKMLL6", //Sign up for your personal key
+        location:"Jaipur, IN", //Enter an address
+        unitGroup:"metric", //"us" or "metric"
+        forecastDays:5, //how many days forecast to show
+        title:"Jaipur, IN", //optional title to show in the 
+        showTitle:true, 
+        showConditions:true
+    });
+   
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+ </script>
+</html>
